@@ -1,0 +1,34 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/block.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" th:href="@{'/palette/' + ${palette} + '.css'}">
+    <title>Blocks</title>
+</head>
+<body>
+<div class="columns">
+    <div th:each="column : ${colors}" class="rows">
+        <div th:each="row : ${column}" th:class="'cell color-'+${row}" th:text="${row}">
+        </div>
+    </div>
+</div>
+
+<a th:href="@{'/code/' + ${code} + '/block?n=' + ${currentBLock - 1} }" th:if="${currentBLock > 0 }">
+    Previous
+</a>
+
+<a th:href="@{'/code/' + ${code} + '/block?n=' + ${currentBLock + 1} }" th:if="${currentBLock + 1 < totalBlocks}">
+    Next
+</a>
+
+<a th:href="@{'/code/' + ${code} + '/blocks'}">
+    Back
+</a>
+
+<span th:text="'Block ' + ${currentBLock + 1} + '/' + ${totalBlocks}"></span>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+div img {
+	margin-top: 20px;
+}
+
+.img-container > div {
+    width: 68%;
+}
+
+.img-container img {
+    width: 100%;
+}
+
+.img-container span {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.main-content a{
+	font-size: 3rem;
+}
+

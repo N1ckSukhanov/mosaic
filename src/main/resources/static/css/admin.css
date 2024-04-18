@@ -1,0 +1,28 @@
+.table-container {
+    width: 100%;
+}
+
+.table-container table {
+    width: 100%;
+}
+
+.table-container table {
+    border-collapse: collapse;
+}
+
+.table-container table, td, th {
+    border: black solid 1px;
+}
+
+.table-container td {
+    text-align: center;
+}
+
+.pages {
+    display: flex;
+    flex-direction: row;
+}
+
+.pages span, a {
+    margin-right: 10px;
+}

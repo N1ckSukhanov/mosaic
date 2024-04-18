@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+<div class="table-container">
+    <form method="DELETE">
+        <table>
+            <thead>
+            <tr>
+                <th>Code</th>
+                <th>State</th>
+                <th>Created</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="row : ${pageContent}">
+                <td th:text="${row.code}" th:unless="${row.state == row.state.USED}"></td>
+                <td th:if="${row.state == row.state.USED}">
+                    <a th:href="@{'/admin/imgs/' + ${row.code}}" th:text="${row.code}"></a>
+                </td>
+                <td th:text="${row.state}"></td>
+                <td th:text="${#temporals.format(row.created, 'dd.MM.yyyy HH:mm:ss')}"></td>
+                <td>
+                    <button th:formaction="@{'/admin/delete/' + ${row.id}}">DELETE</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <form th:action="@{/admin/new}" th:method="post">
+        <input type="text" name="code" id="code" placeholder="code">
+        <button type="submit">NEW</button>
+    </form>
+    <form th:action="@{/admin/many-new}" th:method="post">
+        <input type="text" name="amount" id="amount" placeholder="amount" maxlength="4">
+        <button type="submit">MANY NEW</button>
+    </form>
+    <div class="pages" th:if="${totalPages > 1}">
+        <span>Page: </span>
+        <a th:if="${currentPage > 0}" th:href="@{'/admin/page/' + ${currentPage - 1}}">Previous</a>
+        <a th:if="${currentPage < totalPages - 1}" th:href="@{'/admin/page/' + ${currentPage + 1}}">Next</a>
+    </div>
+</div>
+</body>
+</html>

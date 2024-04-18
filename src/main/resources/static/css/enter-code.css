@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.btn-primary {
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    width: 400px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+input[type=text] {
+    width: 389px;
+    margin-top: 10px;
+    height: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+

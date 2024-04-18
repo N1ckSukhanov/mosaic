@@ -1,0 +1,239 @@
+@font-face {
+    font-family: "Manrope";
+    src: url("https://fonts.googleapis.com/css?family=Manrope") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+a{
+	color: black;
+	text-decoration: none;
+}a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+body {
+	background-color: #f8f8f0;
+	font-family: Manrope,sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.2;
+	color: #212529;
+	text-align: center;
+}
+
+.main-container {
+	display: flex;
+	justify-content: center;
+}
+
+.flex-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	width: 80%;
+}
+
+
+.flex-header{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #fff;
+
+	width: 100%;
+
+}.flex-header div{
+	text-align: center;
+}.flex-header h1 {
+	font-size: 3rem;
+	font-weight: 800;
+	padding-bottom: 3rem !important;
+	margin: 0 !important;
+	font-size: 2rem;
+}
+
+
+.flex-content{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	background-color: #f3f3f3;
+	width: 100%;
+}
+
+.flex-footer{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	background-color: #f3f3f3;
+
+	width: 100%;
+	min-height: 300px;
+
+	background-image: url("../img/footer.svg");
+	background-size: cover;
+
+}.footer-main{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0 20px 0 20px;
+}.footer-main p{
+	font-size: 12px;
+	font-weight: bolder;
+	line-height: 14.4px;
+}.footer-copyright p{
+	font-weight: 500;
+}
+
+
+
+p{
+	margin-top: 0;
+	margin-bottom: 1rem;
+	font-weight: 800;
+	display: inline !important;
+}
+
+h1{
+	font-weight: bolder;
+}
+
+.btn-empty{
+	border: 1px solid #000 !important;
+	padding: 0 !important;
+
+	background-color: #fff;
+}
+.btn-empty: hover{
+	background-color: #fffdec;
+}
+
+/* input file -------------------------------------------*/
+.input-file {
+	position: relative;
+	display: inline-block;
+}
+.input-file-text {
+	padding: 0 10px;
+	line-height: 40px;
+	text-align: left;
+	height: 40px;
+	display: block;
+	float: left;
+	box-sizing: border-box;
+	width: 200px;
+	border-radius: 6px 0px 0 6px;
+	border: 1px solid #ddd;
+}
+.input-file-btn {
+position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	text-decoration: none;
+	font-size: 14px;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 0 4px 4px 0;
+	line-height: 22px;
+	height: 40px;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	border: none;
+	margin: 0;
+	transition: background-color 0.2s;
+	background-color: #000;
+	color: #fff;
+}
+.input-file input[type=file] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+ 
+/* Focus */
+.input-file input[type=file]:focus + .input-file-btn {
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+ 
+/* Hover/active */
+.input-file:hover .input-file-btn {
+	background-color: #555;
+	color: #fff;
+}
+.input-file:active .input-file-btn {
+	background-color: #aaa;
+	color: #fff;
+}
+ 
+/* Disabled */
+.input-file input[type=file]:disabled + .input-file-btn {
+	background-color: #111;
+	color: #fff;
+}
+
+.drop-container{
+	padding: 100px 200px 100px 200px;
+}
+/* input file -------------------------------------------*/
+
+select{
+	background-color: #000;
+	color: #fff;
+	padding: 10px 15px 10px 15px;
+	font-size: 1.6rem !important;
+	border-radius: 7px;
+	margin-top: 20px;
+}
+button{
+	background-color: #000;
+	color: #fff;
+	padding: 10px 15px 10px 15px;
+	font-size: 1.6rem !important;
+	border-radius: 7px;
+	margin-top: 20px;
+}
+
+.popup-hidder{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.popup{
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+  height: 100%;
+}
+
+
+.popup .text-center {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#cropper img{
+	min-width: 60vw;
+	min-height: 60vh;
+	max-width: 80vw;
+	max-height: 80vh;
+}

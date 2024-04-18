@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mosaica - Code</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script defer src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
+    <link href='https://fonts.googleapis.com/css?family=Manrope' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/enter-code.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+</head>
+<body>
+	<div class="main-container">
+		<div class="flex-container">
+			<div class="flex-header">
+				<div class="header-logo">
+					<h1>Mosaica</h1>
+				</div>
+				<div class="header-description">
+					<h1>Алмазная фото-мозаика</h1>
+				</div>
+			</div>
+
+			<div class="flex-content">
+				<div class="main-content">
+
+<div class="container">
+    <div th:if="${invalidCode}">
+        <p>Code is invalid</p>
+    </div>
+    <form action="#" th:action="@{/code}" method="post">
+        <input type="hidden"
+               th:name="${_csrf.parameterName}"
+               th:value="${_csrf.token}"/>
+        <input type="text" id="code" name="code">
+        <button type="submit" class="btn-primary btn btn-lg">Enter</button>
+    </form>
+</div>
+				</div>
+			</div>
+
+			<div class="flex-footer">
+				<div class="footer-main">
+					<p class="footer-mail" >Свяжитесь с нами: <a href="ссылка">ссылка на почту</a></p>
+					<p class="footer-copyright">© 2020–2024</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
+
