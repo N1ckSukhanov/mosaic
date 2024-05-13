@@ -50,7 +50,7 @@ public class ConvertController {
     @PostMapping("/code")
     public String proceed(Model model, @RequestParam("code") String code) {
         if (code == null || code.isEmpty())
-            return "redirect:/enter-code";
+            return "redirect:/";
 
         return accessCodeService.getCodeId(code).map(codeId -> {
             if (accessCodeService.isCodeUsedById(codeId)) {
